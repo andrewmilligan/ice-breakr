@@ -3,7 +3,7 @@
   display: grid;
   min-height: 100vh;
   background-image: linear-gradient(to bottom, #2E3440, #0f1115);
-  grid-template-rows: 20vh 1fr;
+  grid-template-rows: 20vh 1fr 25vh;
   grid-template-columns: 1fr;
   row-gap: 3rem;
   justify-content: center;
@@ -177,4 +177,25 @@
 .shuffle {
   width: 48px;
   margin: 0 auto;
+}
+
+.mobileButton {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: red;
+  border: 1px solid rgba(#D8DEE9, 0.4);
+  background-image: url("./shuffle.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 32px;
+  background-color: rgba(#D8DEE9, 0.1);
+  justify-self: center;
+  align-self: center;
+}
+
+@media (min-width: 640px) {
+  .mobileButton {
+    display: none;
+  }
 }

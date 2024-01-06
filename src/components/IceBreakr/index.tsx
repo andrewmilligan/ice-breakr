@@ -35,9 +35,11 @@ export default function IceBreakr() {
         <span className={styles.logo} />
         Ice <span className={styles.pinkSpan}>Breakr</span>
       </h1>
+
       <button
         className={styles.button}
         onClick={randomize}
+        aria-label="Randomize"
       >
         <div className={styles.card}>
           <div
@@ -57,6 +59,12 @@ export default function IceBreakr() {
           </div>
         </div>
       </button>
+
+      <button
+        className={styles.mobileButton}
+        onClick={randomize}
+        aria-label="Randomize"
+      />
     </main>
   );
 }
