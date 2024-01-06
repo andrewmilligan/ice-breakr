@@ -1,7 +1,10 @@
 #!/bin/bash
 
-DEPLOY_BUCKET="milligan.news"
-DEPLOY_PREFIX="ice-breakr"
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+source "${DIR}/../.env"
+
+DEPLOY_BUCKET=${NEXT_PUBLIC_DEPLOYMENT_DOMAIN#https://}
+DEPLOY_PREFIX=${NEXT_PUBLIC_BASE_PATH#/}
 
 set -e
 
@@ -24,4 +27,4 @@ aws s3 sync \
   --sse AES256 \
   --cache-control "max-age=3153600000" \
   out/_next/ \
-  "s3://${BUCKET}/${PREFIX}/_next/"
+  "s3://${DEPLOY_BUCKET}/${DEPLOY_PREFIX}/_next/"

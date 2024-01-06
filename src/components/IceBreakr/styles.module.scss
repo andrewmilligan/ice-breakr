@@ -3,10 +3,19 @@
   display: grid;
   min-height: 100vh;
   background-image: linear-gradient(to bottom, #2E3440, #0f1115);
-  grid-template-rows: 25vh 1fr;
+  grid-template-rows: 20vh 1fr;
+  grid-template-columns: 1fr;
   row-gap: 3rem;
   justify-content: center;
   color: #ECEFF4;
+  overflow: clip;
+  padding: 0 1rem;
+}
+
+@media (min-width: 640px) {
+  .main {
+    grid-template-rows: 25vh 1fr;
+  }
 }
 
 .container {
@@ -102,8 +111,9 @@
   position: relative;
   z-index: 2;
   align-self: flex-start;
-  max-width: 100%;
-  width: 36rem;
+  width: 100%;
+  max-width: 36rem;
+  margin: 0 auto;
   border-radius: 0.75rem;
   overflow: hidden;
   color: #ECEFF4;
@@ -118,12 +128,12 @@
 }
 
 .cardContent {
-  min-height: 14rem;
+  min-height: 6rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 1rem;
-  padding: 2rem 3rem;
+  padding: 1rem 2rem;
   border-radius: 0.75rem;
   opacity: 1;
   transition: filter 500ms cubic-bezier(0.5, 0, 0.2, 1),
@@ -144,10 +154,24 @@
   }
 }
 
+@media (min-width: 640px) {
+  .cardContent {
+    min-height: 14rem;
+    padding: 2rem 3rem;
+  }
+}
+
 .question {
-  font-size: 1.72rem;
-  line-height: 2.4rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
   margin: auto 0;
+}
+
+@media (min-width: 640px) {
+  .question {
+    font-size: 1.72rem;
+    line-height: 2.4rem;
+  }
 }
 
 .shuffle {
